@@ -5,9 +5,16 @@
   "license": "Apache-2.0",
   "private": false,
   "scripts": {
-    "build:ts-exporter": "npx webpack",
+    "build:ts-exporter": "npm test && npx webpack",
+    "test": "jest --silent",
     "reload": "bash -c 'npx webpack && (find ${0} | grep public/${npm_package_name}.js | xargs -I {} cp -v ${npm_package_main} {})'",
     "reload:auto": "bash -c 'npx watch \"yarn run reload -- ${0}\" src'"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.15",
