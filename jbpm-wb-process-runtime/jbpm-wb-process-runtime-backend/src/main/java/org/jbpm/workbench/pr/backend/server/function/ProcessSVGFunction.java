@@ -25,7 +25,7 @@ import org.dashbuilder.external.impl.BackendComponentFunction;
 import org.jbpm.workbench.pr.service.ProcessImageService;
 
 @Dependent
-public class ProcessSVGFunction implements BackendComponentFunction {
+public class ProcessSVGFunction implements BackendComponentFunction<Object> {
 
     private final String CONTAINERID_PARAM = "containerId";
     private final static String PROCESSID_PARAM = "processId";
